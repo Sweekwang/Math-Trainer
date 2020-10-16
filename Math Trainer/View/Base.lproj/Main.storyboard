@@ -974,6 +974,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eeg-jD-jnx">
                                 <rect key="frame" x="0.0" y="88" width="414" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="T6l-rU-6T2" id="LYM-8T-0Tw"/>
+                                    <outlet property="delegate" destination="T6l-rU-6T2" id="oHJ-Od-tfk"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yQ8-dK-09y"/>
@@ -989,6 +993,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mR9-Ej-RVh"/>
+                    <connections>
+                        <outlet property="tv" destination="eeg-jD-jnx" id="qSm-RN-Jph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ri7-MN-Shj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

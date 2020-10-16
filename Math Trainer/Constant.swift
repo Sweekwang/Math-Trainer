@@ -15,4 +15,8 @@ struct K {
     
     static let numberSettingCell = "numberSettingCell"
     static let numberSettingNibStr = "NumberTableViewCell"
+    static let resultCellCell = "resultCell"
+    static let resultCellNibStr = "ResultTableViewCell"
+    static let myQuestionCell = "myQuestion"
+    static let myQuestionCellNibStr = "MyQuestionTableViewCell"
 }

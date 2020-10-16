@@ -188,10 +188,18 @@ class QuestionViewController: UIViewController {
             updateUI()
         } else {
             performSegue(withIdentifier: K.segueEndIdentifier, sender: self)
-            print("End of Questions")
-            print(firstNumber)
-            print(secNumber)
-            print(mathQuestions!.solutions)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == K.segueEndIdentifier) {
+            let vc = segue.destination as! EndViewController
+            vc.firstNumber = firstNumber!
+            vc.secondNumber = secNumber!
+            vc.operators = operators!
+            vc.solutions = mathQuestions!.solutions
+            vc.score = score
+            vc.lenOfQn = numberOfQuestions
         }
     }
     
