@@ -23,12 +23,9 @@ class QuestionViewController: UIViewController {
     
     var mathQuestions : MathQuestions?
     
-    var firstNumber: [Int] {
-        return NumberGenerator(highestNumber: maxNumber!, lowestNumber: minNumber!, numberOfQuestions: numberOfQuestions! ).generateNumbers()
-    }
-    var secNumber: [Int]{
-        return NumberGenerator(highestNumber: maxNumber!, lowestNumber: minNumber!, numberOfQuestions: numberOfQuestions! ).generateNumbers()
-    }
+    var firstNumber: [Int]?
+    var secNumber: [Int]?
+    var operators: [String]?
     
     let correctWrongView = CorrectWrongView(frame: UIScreen.main.bounds)
     
@@ -48,30 +45,85 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.global(qos: .background).async { [self] in
+            numberOfQuestions = self.setUpNumberofQn()
+            firstNumber = self.setupNumbers()
+            secNumber = self.setupNumbers()
+            operators = self.setupOperators()
+
+            DispatchQueue.main.async {
+                mathQuestions = MathQuestions(firstNumbers: firstNumber!, secNumbers: secNumber!, mathOperator: operators!)
+                updateUI()
+            }
+        }
+        
+    
         correctWrongView.alpha = 0
         previousQnLabel.text = ""
         warningText.alpha = 0
-        print(typeOfQns as Any)
-        print("[QuestionViewController] \(minNumber!)")
-        print("[QuestionViewController] \(maxNumber!)")
-        print("[QuestionViewController] \(numberOfQuestions!)")
-        print("[QuestionViewController] \(numberOfSubQuestions ?? 1)")
-        print("[QuestionViewController] \(numberOfMultiQuestions ?? 1)")
-        print("[QuestionViewController] \(numberOfDivQuestions ?? 1)")
-        
-        mathQuestions = MathQuestions(firstNumbers: firstNumber, secNumbers: secNumber, mathOperator: typeOfQns!)
-        print(mathQuestions!.firstNumber)
         self.answerView.layer.borderColor = UIColor.red.cgColor
         
-        updateUI()
-
+    }
+    
+    func setupOperators() -> [String]{
+        var operators = [String]()
+        if (typeOfQns == "Addition"){
+            for _ in 0..<numberOfQuestions! {
+                operators.append("Addition")
+            }
+        } else if (typeOfQns == "Subtraction"){
+            for _ in 0..<numberOfQuestions! {
+                operators.append("Subtraction")
+            }
+        } else if (typeOfQns == "Multiplication") {
+            for _ in 0..<numberOfQuestions! {
+                operators.append("Multiplication")
+            }
+        } else if (typeOfQns == "Division") {
+            for _ in 0..<numberOfQuestions! {
+                operators.append("Division")
+            }
+        } else {
+            for _ in 0..<numberOfQuestions! {
+                operators.append("Addition")
+            }
+            for _ in 0..<numberOfSubQuestions! {
+                operators.append("Subtraction")
+            }
+            for _ in 0..<numberOfMultiQuestions! {
+                operators.append("Multiplication")
+            }
+            for _ in 0..<numberOfDivQuestions! {
+                operators.append("Division")
+            }
+        }
         
+        return operators.shuffled()
+    }
+    
+    func setUpNumberofQn() -> Int{
+        var numberOfQns = numberOfQuestions!
+        
+        if typeOfQns == "Mixed" {
+            numberOfQns = numberOfQuestions! + numberOfSubQuestions! + numberOfMultiQuestions! + numberOfDivQuestions!
+        }
+        
+        return numberOfQns
+        
+    }
+    
+    func setupNumbers() -> [Int]{
+        
+        let number = NumberGenerator(highestNumber: maxNumber!, lowestNumber: minNumber!, numberOfQuestions: numberOfQuestions!)
+        
+        return number.generateNumbers()
     }
     
     func updateUI(){
         questionNumberLabel.text = "Questions: \(mathQuestions!.currentQuestionNo + 1) / \(numberOfQuestions!)"
         scoreLabel.text = "Score: \(score)"
-        switch typeOfQns {
+        
+        switch operators![mathQuestions!.currentQuestionNo] {
         case "Addition":
             currentOperator = "+"
             break
@@ -135,6 +187,7 @@ class QuestionViewController: UIViewController {
             mathQuestions!.nextQuestion()
             updateUI()
         } else {
+            performSegue(withIdentifier: K.segueEndIdentifier, sender: self)
             print("End of Questions")
             print(firstNumber)
             print(secNumber)

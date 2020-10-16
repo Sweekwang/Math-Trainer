@@ -17,15 +17,14 @@ struct NumberGenerator {
         var arrayOfNumbers = [Int]()
 
         for _ in 1...numberOfQuestions{
-            var randomNumber = Int.random(in: lowestNumber ..< highestNumber)
-            
-            while arrayOfNumbers.contains(randomNumber) {
-                randomNumber = Int.random(in: lowestNumber ..< highestNumber)
-            }
-            
+
+            let randomNumber = Int.random(in: lowestNumber ..< highestNumber)
+
             arrayOfNumbers.append(randomNumber)
             
         }
         return arrayOfNumbers
     }
+    
+
 }
