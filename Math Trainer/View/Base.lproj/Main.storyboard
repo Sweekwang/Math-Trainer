@@ -949,11 +949,50 @@
                         <outlet property="scoreLabel" destination="MLE-hE-H7r" id="3Uo-Gz-Qn6"/>
                         <outlet property="topContainer" destination="SzT-Ae-LCg" id="XaN-e5-lsa"/>
                         <outlet property="warningText" destination="wNe-YY-fHU" id="7Tr-Ov-zva"/>
+                        <segue destination="T6l-rU-6T2" kind="show" identifier="goToEnd" id="lS9-bg-s6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddP-g6-Xni" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2413.04347826087" y="118.52678571428571"/>
+        </scene>
+        <!--End View Controller-->
+        <scene sceneID="MEU-Wc-mbb">
+            <objects>
+                <viewController id="T6l-rU-6T2" customClass="EndViewController" customModule="Math_Trainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RWv-2D-0ZM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYB-sl-01M" userLabel="Ads Container">
+                                <rect key="frame" x="0.0" y="783" width="414" height="79"/>
+                                <color key="backgroundColor" red="0.62721151109999995" green="0.97042852639999999" blue="0.74901741740000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="UEg-52-Siw"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eeg-jD-jnx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="695"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yQ8-dK-09y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sYB-sl-01M" firstAttribute="trailing" secondItem="yQ8-dK-09y" secondAttribute="trailing" id="28F-V7-fED"/>
+                            <constraint firstItem="yQ8-dK-09y" firstAttribute="bottom" secondItem="sYB-sl-01M" secondAttribute="bottom" id="4bq-ew-vNS"/>
+                            <constraint firstItem="eeg-jD-jnx" firstAttribute="top" secondItem="yQ8-dK-09y" secondAttribute="top" id="4vz-Q8-gnd"/>
+                            <constraint firstItem="sYB-sl-01M" firstAttribute="top" secondItem="eeg-jD-jnx" secondAttribute="bottom" id="M54-A3-Qxj"/>
+                            <constraint firstItem="yQ8-dK-09y" firstAttribute="trailing" secondItem="eeg-jD-jnx" secondAttribute="trailing" id="ZxP-du-17V"/>
+                            <constraint firstItem="eeg-jD-jnx" firstAttribute="leading" secondItem="yQ8-dK-09y" secondAttribute="leading" id="nDC-2e-2bV"/>
+                            <constraint firstItem="sYB-sl-01M" firstAttribute="leading" secondItem="yQ8-dK-09y" secondAttribute="leading" id="pAz-vc-67d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mR9-Ej-RVh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ri7-MN-Shj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3171" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VfP-4E-GN9">

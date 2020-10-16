@@ -11,6 +11,7 @@ import Foundation
 struct K {
     static let segueSettingIdentifier = "goToSetting"
     static let segueQuestionIdentifier = "goToQuestions"
+    static let segueEndIdentifier = "goToEnd"
     
     static let numberSettingCell = "numberSettingCell"
     static let numberSettingNibStr = "NumberTableViewCell"

@@ -51,7 +51,7 @@ class SettingViewController: UIViewController {
                 vc.numberOfQuestions = Int(numberOfQuestionsTextField!.text!)
             } else {
                 if selectedTopic == "Mixed"{
-                    vc.numberOfQuestions = 20
+                    vc.numberOfQuestions = 5
                 } else {
                     vc.numberOfQuestions = 10
                 }

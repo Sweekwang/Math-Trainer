@@ -11,7 +11,7 @@ import Foundation
 struct MathQuestions {
     let firstNumbers : [Int]
     let secNumbers : [Int]
-    let mathOperator : String
+    let mathOperator : [String]
     
     var currentQuestionNo = 0
     var firstNumber: Int {
@@ -25,7 +25,7 @@ struct MathQuestions {
     var solutions : [Double] {
         var answers = [Double]()
         for i in 0...(firstNumbers.count - 1){
-            switch mathOperator {
+            switch mathOperator[i] {
             case "Addition":
                 answers.append(Double(firstNumbers[i] + secNumbers[i]))
                 break
