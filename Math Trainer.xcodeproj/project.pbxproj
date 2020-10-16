@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69166B9A25161B9B00AF01E7 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69166B9925161B9B00AF01E7 /* NumberGenerator.swift */; };
+		69166B9C2516217500AF01E7 /* MathQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69166B9B2516217500AF01E7 /* MathQuestions.swift */; };
+		69402AC6250A6C76007D4DE2 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69402AC5250A6C76007D4DE2 /* QuestionViewController.swift */; };
+		69B3704025064EA8002CF96B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B3703F25064EA8002CF96B /* AppDelegate.swift */; };
+		69B3704225064EA8002CF96B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B3704125064EA8002CF96B /* SceneDelegate.swift */; };
+		69B3704425064EA8002CF96B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B3704325064EA8002CF96B /* ViewController.swift */; };
+		69B3704725064EA9002CF96B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B3704525064EA9002CF96B /* Main.storyboard */; };
+		69B3704A25064EA9002CF96B /* Math_Trainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69B3704825064EA9002CF96B /* Math_Trainer.xcdatamodeld */; };
+		69B3704C25064EAC002CF96B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69B3704B25064EAC002CF96B /* Assets.xcassets */; };
+		69B3704F25064EAC002CF96B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69B3704D25064EAC002CF96B /* LaunchScreen.storyboard */; };
+		69B370642506628E002CF96B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B370632506628E002CF96B /* SettingViewController.swift */; };
+		69B37066250676A4002CF96B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B37065250676A4002CF96B /* Constant.swift */; };
+		69B3706925067941002CF96B /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B3706725067941002CF96B /* NumberTableViewCell.swift */; };
+		69B3706A25067941002CF96B /* NumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69B3706825067941002CF96B /* NumberTableViewCell.xib */; };
+		69C3C79D25203AC500840426 /* CorrectWrongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C3C79C25203AC500840426 /* CorrectWrongView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		69166B9925161B9B00AF01E7 /* NumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
+		69166B9B2516217500AF01E7 /* MathQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuestions.swift; sourceTree = "<group>"; };
+		69402AC5250A6C76007D4DE2 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		69B3703C25064EA8002CF96B /* Math Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B3703F25064EA8002CF96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69B3704125064EA8002CF96B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		69B3704325064EA8002CF96B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		69B3704625064EA9002CF96B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69B3704925064EA9002CF96B /* Math_Trainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Math_Trainer.xcdatamodel; sourceTree = "<group>"; };
+		69B3704B25064EAC002CF96B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69B3704E25064EAC002CF96B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69B3705025064EAC002CF96B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69B3705725065299002CF96B /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		69B3705825065299002CF96B /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		69B3705925065299002CF96B /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		69B3705A25065299002CF96B /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		69B3705B25065299002CF96B /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		69B3705C25065299002CF96B /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		69B3705D25065299002CF96B /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		69B3705E25065299002CF96B /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		69B3705F25065299002CF96B /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		69B3706025065299002CF96B /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		69B370632506628E002CF96B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		69B37065250676A4002CF96B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		69B3706725067941002CF96B /* NumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
+		69B3706825067941002CF96B /* NumberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberTableViewCell.xib; sourceTree = "<group>"; };
+		69C3C79C25203AC500840426 /* CorrectWrongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectWrongView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69B3703925064EA8002CF96B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69166B9825161B7600AF01E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69166B9925161B9B00AF01E7 /* NumberGenerator.swift */,
+				69166B9B2516217500AF01E7 /* MathQuestions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		69B3703325064EA8002CF96B = {
+			isa = PBXGroup;
+			children = (
+				69B3703E25064EA8002CF96B /* Math Trainer */,
+				69B3703D25064EA8002CF96B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69B3703D25064EA8002CF96B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69B3703C25064EA8002CF96B /* Math Trainer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69B3703E25064EA8002CF96B /* Math Trainer */ = {
+			isa = PBXGroup;
+			children = (
+				69166B9825161B7600AF01E7 /* Model */,
+				69B370562506528C002CF96B /* Fonts */,
+				69B3703F25064EA8002CF96B /* AppDelegate.swift */,
+				69B3704125064EA8002CF96B /* SceneDelegate.swift */,
+				69B3706125065EAD002CF96B /* View */,
+				69B3706225065EB7002CF96B /* Controller */,
+				69B3704B25064EAC002CF96B /* Assets.xcassets */,
+				69B3704D25064EAC002CF96B /* LaunchScreen.storyboard */,
+				69B3705025064EAC002CF96B /* Info.plist */,
+				69B3704825064EA9002CF96B /* Math_Trainer.xcdatamodeld */,
+				69B37065250676A4002CF96B /* Constant.swift */,
+			);
+			path = "Math Trainer";
+			sourceTree = "<group>";
+		};
+		69B370562506528C002CF96B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				69B3705925065299002CF96B /* OpenSans-Bold.ttf */,
+				69B3705825065299002CF96B /* OpenSans-BoldItalic.ttf */,
+				69B3705E25065299002CF96B /* OpenSans-ExtraBold.ttf */,
+				69B3705725065299002CF96B /* OpenSans-ExtraBoldItalic.ttf */,
+				69B3705C25065299002CF96B /* OpenSans-Italic.ttf */,
+				69B3705B25065299002CF96B /* OpenSans-Light.ttf */,
+				69B3706025065299002CF96B /* OpenSans-LightItalic.ttf */,
+				69B3705A25065299002CF96B /* OpenSans-Regular.ttf */,
+				69B3705F25065299002CF96B /* OpenSans-SemiBold.ttf */,
+				69B3705D25065299002CF96B /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		69B3706125065EAD002CF96B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69B3704525064EA9002CF96B /* Main.storyboard */,
+				69B3706725067941002CF96B /* NumberTableViewCell.swift */,
+				69B3706825067941002CF96B /* NumberTableViewCell.xib */,
+				69C3C79C25203AC500840426 /* CorrectWrongView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		69B3706225065EB7002CF96B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69B3704325064EA8002CF96B /* ViewController.swift */,
+				69B370632506628E002CF96B /* SettingViewController.swift */,
+				69402AC5250A6C76007D4DE2 /* QuestionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69B3703B25064EA8002CF96B /* Math Trainer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69B3705325064EAC002CF96B /* Build configuration list for PBXNativeTarget "Math Trainer" */;
+			buildPhases = (
+				69B3703825064EA8002CF96B /* Sources */,
+				69B3703925064EA8002CF96B /* Frameworks */,
+				69B3703A25064EA8002CF96B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Math Trainer";
+			productName = "Math Trainer";
+			productReference = 69B3703C25064EA8002CF96B /* Math Trainer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69B3703425064EA8002CF96B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = "Ares Chua";
+				TargetAttributes = {
+					69B3703B25064EA8002CF96B = {
+						CreatedOnToolsVersion = 11.7;
+					};
+				};
+			};
+			buildConfigurationList = 69B3703725064EA8002CF96B /* Build configuration list for PBXProject "Math Trainer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69B3703325064EA8002CF96B;
+			productRefGroup = 69B3703D25064EA8002CF96B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69B3703B25064EA8002CF96B /* Math Trainer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69B3703A25064EA8002CF96B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B3706A25067941002CF96B /* NumberTableViewCell.xib in Resources */,
+				69B3704F25064EAC002CF96B /* LaunchScreen.storyboard in Resources */,
+				69B3704C25064EAC002CF96B /* Assets.xcassets in Resources */,
+				69B3704725064EA9002CF96B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69B3703825064EA8002CF96B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B370642506628E002CF96B /* SettingViewController.swift in Sources */,
+				69B3704425064EA8002CF96B /* ViewController.swift in Sources */,
+				69B3704025064EA8002CF96B /* AppDelegate.swift in Sources */,
+				69B3704225064EA8002CF96B /* SceneDelegate.swift in Sources */,
+				69166B9A25161B9B00AF01E7 /* NumberGenerator.swift in Sources */,
+				69B3704A25064EA9002CF96B /* Math_Trainer.xcdatamodeld in Sources */,
+				69B37066250676A4002CF96B /* Constant.swift in Sources */,
+				69402AC6250A6C76007D4DE2 /* QuestionViewController.swift in Sources */,
+				69B3706925067941002CF96B /* NumberTableViewCell.swift in Sources */,
+				69166B9C2516217500AF01E7 /* MathQuestions.swift in Sources */,
+				69C3C79D25203AC500840426 /* CorrectWrongView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		69B3704525064EA9002CF96B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69B3704625064EA9002CF96B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		69B3704D25064EAC002CF96B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69B3704E25064EAC002CF96B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69B3705125064EAC002CF96B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		69B3705225064EAC002CF96B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69B3705425064EAC002CF96B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Math Trainer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AresnWes.Math-Trainer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69B3705525064EAC002CF96B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Math Trainer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AresnWes.Math-Trainer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69B3703725064EA8002CF96B /* Build configuration list for PBXProject "Math Trainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B3705125064EAC002CF96B /* Debug */,
+				69B3705225064EAC002CF96B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69B3705325064EAC002CF96B /* Build configuration list for PBXNativeTarget "Math Trainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B3705425064EAC002CF96B /* Debug */,
+				69B3705525064EAC002CF96B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		69B3704825064EA9002CF96B /* Math_Trainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				69B3704925064EA9002CF96B /* Math_Trainer.xcdatamodel */,
+			);
+			currentVersion = 69B3704925064EA9002CF96B /* Math_Trainer.xcdatamodel */;
+			path = Math_Trainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 69B3703425064EA8002CF96B /* Project object */;
+}

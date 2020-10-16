@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="numberSettingCell" rowHeight="80" id="KGk-i7-Jjw" customClass="NumberTableViewCell" customModule="Math_Trainer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="340" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-sQ-KCG">
+                        <rect key="frame" x="10" y="10" width="320" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum number:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9U-uR-AOi">
+                                <rect key="frame" x="15" y="0.0" width="142.33333333333334" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number (Default Random)" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="097-Fc-fah">
+                                <rect key="frame" x="157.33333333333337" y="13" width="147.66666666666663" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="3nP-26-PfN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.62721151109999995" green="0.97042852639999999" blue="0.74901741740000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="w9U-uR-AOi" secondAttribute="bottom" id="4bk-wW-J3D"/>
+                            <constraint firstAttribute="trailing" secondItem="097-Fc-fah" secondAttribute="trailing" constant="15" id="5ov-e5-uoV"/>
+                            <constraint firstItem="w9U-uR-AOi" firstAttribute="top" secondItem="JzP-sQ-KCG" secondAttribute="top" id="B0D-2i-czd"/>
+                            <constraint firstItem="097-Fc-fah" firstAttribute="centerY" secondItem="JzP-sQ-KCG" secondAttribute="centerY" id="GxH-CV-kql"/>
+                            <constraint firstItem="w9U-uR-AOi" firstAttribute="leading" secondItem="JzP-sQ-KCG" secondAttribute="leading" constant="15" id="HYM-oy-nWu"/>
+                            <constraint firstItem="097-Fc-fah" firstAttribute="leading" secondItem="w9U-uR-AOi" secondAttribute="trailing" id="Koi-Fs-ARe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="JzP-sQ-KCG" secondAttribute="trailing" constant="10" id="B1W-8l-lA0"/>
+                    <constraint firstItem="JzP-sQ-KCG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="SwO-bq-mYk"/>
+                    <constraint firstItem="w9U-uR-AOi" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.418539" id="aMI-n4-Z6l"/>
+                    <constraint firstAttribute="bottom" secondItem="JzP-sQ-KCG" secondAttribute="bottom" constant="10" id="em5-v2-DmF"/>
+                    <constraint firstItem="JzP-sQ-KCG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mKM-dn-eV3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="infoTextLabel" destination="w9U-uR-AOi" id="Wyh-Q5-HCu"/>
+                <outlet property="numberTextField" destination="097-Fc-fah" id="bNF-jc-Yju"/>
+            </connections>
+            <point key="canvasLocation" x="132.80000000000001" y="158.12807881773401"/>
+        </tableViewCell>
+    </objects>
+</document>
