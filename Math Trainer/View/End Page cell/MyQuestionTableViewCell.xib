@@ -40,6 +40,7 @@
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="oU1-Ge-DSG" secondAttribute="bottom" id="3rg-pV-cPE"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="3rp-im-jll"/>
                             <constraint firstAttribute="width" secondItem="b2I-9S-Itc" secondAttribute="height" multiplier="1:1" id="E0m-5l-TfE"/>
                             <constraint firstItem="gwk-iD-OrU" firstAttribute="leading" secondItem="b2I-9S-Itc" secondAttribute="leading" id="Fwh-Do-N4h"/>
                             <constraint firstItem="oU1-Ge-DSG" firstAttribute="leading" secondItem="b2I-9S-Itc" secondAttribute="leading" id="UOQ-St-bn9"/>
