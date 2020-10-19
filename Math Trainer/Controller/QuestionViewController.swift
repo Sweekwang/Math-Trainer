@@ -26,9 +26,10 @@ class QuestionViewController: UIViewController {
     var firstNumber: [Int]?
     var secNumber: [Int]?
     var operators: [String]?
-    var myAnswer = [String]()
     
     let correctWrongView = CorrectWrongView(frame: UIScreen.main.bounds)
+    
+    
     
     @IBOutlet weak var fullView: UIStackView!
     @IBOutlet weak var questionNumberLabel: UILabel!
@@ -143,9 +144,20 @@ class QuestionViewController: UIViewController {
     }
 
     @IBAction func submitButtonPressed(_ sender: UIButton) {
-        if (mathQuestions!.currentQuestionNo + 1 <= numberOfQuestions!){
+        if (mathQuestions!.currentQuestionNo + 1 < numberOfQuestions!){
             let answer = AnswerEnteredLabel.text!
             var imageName = ""
+            if(answer == ""){
+                UIView.animate(withDuration: 0.5, delay: 0, options: []) {
+                    self.warningText.alpha = 1
+                    self.answerView.layer.borderWidth = 5
+                    self.warningText.textColor = UIColor.red
+                } completion: {_ in
+                
+                }
+                
+                return
+            }
             
             if mathQuestions!.checkAnswer(answer) == true {
                 score += 1
@@ -170,16 +182,11 @@ class QuestionViewController: UIViewController {
                 }
             }
             
-            myAnswer.append(AnswerEnteredLabel.text!)
             AnswerEnteredLabel.text = ""
             previousQnLabel.text = "Previous Question : \(mathQuestions!.firstNumber) \(currentOperator) \(mathQuestions!.secNumber) = \(mathQuestions!.solutions[mathQuestions!.currentQuestionNo])"
             mathQuestions!.nextQuestion()
-            if (mathQuestions!.currentQuestionNo != numberOfQuestions!){
-                updateUI()
-            }
-        }
-        
-        if (mathQuestions!.currentQuestionNo == numberOfQuestions!){
+            updateUI()
+        } else {
             performSegue(withIdentifier: K.segueEndIdentifier, sender: self)
         }
     }
@@ -193,7 +200,6 @@ class QuestionViewController: UIViewController {
             vc.solutions = mathQuestions!.solutions
             vc.score = score
             vc.lenOfQn = numberOfQuestions
-            vc.myAnswer = myAnswer
         }
     }
     

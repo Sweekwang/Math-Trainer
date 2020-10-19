@@ -14,7 +14,6 @@ class EndViewController: UIViewController {
     var operators = [String]()
     var secondNumber = [Int]()
     var solutions = [Double]()
-    var myAnswer = [String]()
     var lenOfQn: Int?
     var score: Int?
     var totalQn: Int?
@@ -23,6 +22,7 @@ class EndViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lenOfQn = firstNumber.count
+        print(lenOfQn)
         print(firstNumber)
         print(operators)
         print(secondNumber)
@@ -30,14 +30,15 @@ class EndViewController: UIViewController {
         
         tv.register(UINib(nibName: K.myQuestionCellNibStr, bundle: nil), forCellReuseIdentifier: K.myQuestionCell)
         tv.register(UINib(nibName: K.resultCellNibStr, bundle: nil), forCellReuseIdentifier: K.resultCellCell)
+        
+        
     }
     
 }
 
 extension EndViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return firstNumber.count + 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,28 +47,6 @@ extension EndViewController: UITableViewDelegate, UITableViewDataSource{
         if indexPath.row == 0 {
             return resultCell
         }
-        
-        var currentOperator = ""
-        switch operators[indexPath.row-1] {
-        case "Addition":
-            currentOperator = "+"
-            break
-        case "Subtraction":
-            currentOperator = "-"
-            break
-        case "Multiplication":
-            currentOperator = "×"
-            break
-        case "Division":
-            currentOperator = "÷"
-            break
-        default:
-            currentOperator = "+"
-        }
-        
-       myQuestionCell.qnNoLabel.text = "\(indexPath.row)"
-        myQuestionCell.equationLabel.text = "\(firstNumber[indexPath.row-1]) \(currentOperator) \(secondNumber[indexPath.row-1]) = \(solutions[indexPath.row-1])"
-        myQuestionCell.userAnswerLabel.text = "\(myAnswer[indexPath.row-1])"
         
         return myQuestionCell
     }
