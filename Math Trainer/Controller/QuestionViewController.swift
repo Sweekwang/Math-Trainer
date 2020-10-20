@@ -200,7 +200,16 @@ class QuestionViewController: UIViewController {
     @IBAction func numberEntered(_ sender: UIButton) {
         self.warningText.alpha = 0
         self.answerView.layer.borderWidth = 0
-        if sender.tag != 10 {
+        if sender.tag == 13 {
+            if Double(AnswerEnteredLabel.text!)! > 0 {
+                AnswerEnteredLabel.text = "-\(AnswerEnteredLabel.text!)"
+            } else if Double(AnswerEnteredLabel.text!)! == 0 {
+                
+            } else {
+                AnswerEnteredLabel.text = String(AnswerEnteredLabel.text!.dropFirst())
+            }
+        
+        } else if sender.tag != 10 {
             AnswerEnteredLabel.text = AnswerEnteredLabel.text! + "\(sender.tag)"
         } else {
             if !AnswerEnteredLabel.text!.contains(".") {
