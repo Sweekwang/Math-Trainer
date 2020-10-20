@@ -44,6 +44,8 @@ extension EndViewController: UITableViewDelegate, UITableViewDataSource{
         let resultCell = tableView.dequeueReusableCell(withIdentifier: K.resultCellCell, for: indexPath) as! ResultTableViewCell
         let myQuestionCell = tableView.dequeueReusableCell(withIdentifier: K.myQuestionCell, for: indexPath) as! MyQuestionTableViewCell
         if indexPath.row == 0 {
+            resultCell.setLayout(score: score!, totalQn: lenOfQn!)
+            resultCell.startAnimation(to: Double(score!)/Double(lenOfQn!))
             return resultCell
         }
         
