@@ -19,4 +19,7 @@ struct K {
     static let resultCellNibStr = "ResultTableViewCell"
     static let myQuestionCell = "myQuestion"
     static let myQuestionCellNibStr = "MyQuestionTableViewCell"
+    
+    static let googleAppID = "ca-app-pub-5585449587767908~7581471385"
+    static let googleAppBannerID = "ca-app-pub-5585449587767908/4955308049"
 }

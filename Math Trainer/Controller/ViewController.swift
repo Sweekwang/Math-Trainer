@@ -7,9 +7,24 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var addView: UIView!
+    @IBOutlet weak var subtractionView: UIView!
+    @IBOutlet weak var mutiplyView: UIView!
+    @IBOutlet weak var divisionView: UIView!
+    @IBOutlet weak var mixedView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewSub: UIImageView!
+    @IBOutlet weak var imageViewMutiple: UIImageView!
+    @IBOutlet weak var imageViewDivide: UIImageView!
+    @IBOutlet weak var imagewVieMixed: UIImageView!
+    @IBOutlet weak var ImageViewPurchase: UIImageView!
+    let gradientLayer = CAGradientLayer()
+    
+    @IBOutlet weak var bannerView: GADBannerView!
     
     @IBOutlet weak var purchaseSupportButton: UIButton!
     var options = ["Addition", "Subtraction", "Multiplication", "Division", "Mixed"]
@@ -29,8 +44,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
      // =============== Styling Adjustment =====================
-        purchaseSupportButton.layer.cornerRadius = 10
+        purchaseSupportButton.layer.cornerRadius = view.frame.height / 120
+        let cornerRatio = view.frame.height / 100
+        addView.layer.cornerRadius = cornerRatio
+        subtractionView.layer.cornerRadius = cornerRatio
+        mutiplyView.layer.cornerRadius = cornerRatio
+        divisionView.layer.cornerRadius = cornerRatio
+        mixedView.layer.cornerRadius = cornerRatio
+        imageView.layer.cornerRadius = cornerRatio
+        imageViewSub.layer.cornerRadius = cornerRatio
+        imageViewMutiple.layer.cornerRadius = cornerRatio
+        imageViewDivide.layer.cornerRadius = cornerRatio
+        imagewVieMixed.layer.cornerRadius = cornerRatio
+        ImageViewPurchase.layer.cornerRadius = cornerRatio
+        
      // ========================================================
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
     }
     

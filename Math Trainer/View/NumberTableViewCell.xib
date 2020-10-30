@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,24 +19,26 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-sQ-KCG">
-                        <rect key="frame" x="10" y="10" width="320" height="60"/>
+                        <rect key="frame" x="10" y="0.0" width="320" height="70"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum number:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9U-uR-AOi">
-                                <rect key="frame" x="15" y="0.0" width="142.33333333333334" height="60"/>
+                                <rect key="frame" x="15" y="0.0" width="142.33333333333334" height="70"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number (Default Random)" textAlignment="natural" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="097-Fc-fah">
-                                <rect key="frame" x="157.33333333333337" y="13" width="147.66666666666663" height="34"/>
+                                <rect key="frame" x="157.33333333333337" y="18" width="147.66666666666663" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="3nP-26-PfN"/>
                                 </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.62721151109999995" green="0.97042852639999999" blue="0.74901741740000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.63921568630000003" green="0.82352941180000006" blue="0.79215686269999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="w9U-uR-AOi" secondAttribute="bottom" id="4bk-wW-J3D"/>
                             <constraint firstAttribute="trailing" secondItem="097-Fc-fah" secondAttribute="trailing" constant="15" id="5ov-e5-uoV"/>
@@ -45,20 +49,27 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="Background"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="JzP-sQ-KCG" secondAttribute="trailing" constant="10" id="B1W-8l-lA0"/>
                     <constraint firstItem="JzP-sQ-KCG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="SwO-bq-mYk"/>
                     <constraint firstItem="w9U-uR-AOi" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.418539" id="aMI-n4-Z6l"/>
                     <constraint firstAttribute="bottom" secondItem="JzP-sQ-KCG" secondAttribute="bottom" constant="10" id="em5-v2-DmF"/>
-                    <constraint firstItem="JzP-sQ-KCG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mKM-dn-eV3"/>
+                    <constraint firstItem="JzP-sQ-KCG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mKM-dn-eV3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="container" destination="JzP-sQ-KCG" id="PKh-2b-Qjk"/>
                 <outlet property="infoTextLabel" destination="w9U-uR-AOi" id="Wyh-Q5-HCu"/>
                 <outlet property="numberTextField" destination="097-Fc-fah" id="bNF-jc-Yju"/>
             </connections>
             <point key="canvasLocation" x="132.80000000000001" y="158.12807881773401"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Background">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
