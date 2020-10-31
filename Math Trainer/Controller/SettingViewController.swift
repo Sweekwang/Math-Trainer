@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class SettingViewController: UIViewController {
     
@@ -20,17 +21,25 @@ class SettingViewController: UIViewController {
     var numberOfDivQuestionsTextField: UITextField?
     // =======================================================================
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var startBgView: UIImageView!
     
     @IBOutlet weak var settingTableView: UITableView!
     @IBOutlet var tabGesture: UITapGestureRecognizer!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("[SettingViewController] Topic Selected: " + selectedTopic)
         startButton.layer.cornerRadius = 10
+        startBgView.layer.cornerRadius = 10
         settingTableView.register(UINib(nibName: K.numberSettingNibStr, bundle: nil), forCellReuseIdentifier: K.numberSettingCell)
         tabGesture.addTarget(self, action: #selector(tapped))
+        
+        // ========================================================
+           bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+           bannerView.rootViewController = self
+           bannerView.load(GADRequest())
     }
     
     @objc func tapped(){

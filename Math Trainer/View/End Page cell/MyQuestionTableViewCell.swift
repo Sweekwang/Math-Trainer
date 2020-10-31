@@ -13,6 +13,7 @@ class MyQuestionTableViewCell: UITableViewCell {
     @IBOutlet weak var qnNoLabel: UILabel!
     @IBOutlet weak var equationLabel: UILabel!
     @IBOutlet weak var userAnswerLabel: UILabel!
+    @IBOutlet weak var userBG: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

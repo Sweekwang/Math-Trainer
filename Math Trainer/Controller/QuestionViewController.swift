@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class QuestionViewController: UIViewController {
     
@@ -27,6 +28,7 @@ class QuestionViewController: UIViewController {
     var secNumber: [Int]?
     var operators: [String]?
     var myAnswer = [String]()
+    var solution = [Bool]()
     
     let correctWrongView = CorrectWrongView(frame: UIScreen.main.bounds)
     
@@ -40,8 +42,26 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var warningText: UILabel!
     @IBOutlet weak var AnswerEnteredLabel: UILabel!
     @IBOutlet weak var answerEnterView: UIView!
+    @IBOutlet weak var bannerView: GADBannerView!
     
-
+    
+    
+    @IBOutlet weak var oneBtn: UIButton!
+    @IBOutlet weak var twoBtn: UIButton!
+    @IBOutlet weak var threeBtn: UIButton!
+    @IBOutlet weak var fourBtn: UIButton!
+    @IBOutlet weak var fiveBtn: UIButton!
+    @IBOutlet weak var sixBtn: UIButton!
+    @IBOutlet weak var sevenBtn: UIButton!
+    @IBOutlet weak var eightBtn: UIButton!
+    @IBOutlet weak var nineBtn: UIButton!
+    @IBOutlet weak var zerobtn: UIButton!
+    @IBOutlet weak var submit: UIButton!
+    @IBOutlet weak var chnageBtn: UIButton!
+    @IBOutlet weak var dotBtn: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.global(qos: .background).async { [self] in
@@ -49,19 +69,59 @@ class QuestionViewController: UIViewController {
             firstNumber = self.setupNumbers()
             secNumber = self.setupNumbers()
             operators = self.setupOperators()
-
+            
             DispatchQueue.main.async {
                 mathQuestions = MathQuestions(firstNumbers: firstNumber!, secNumbers: secNumber!, mathOperator: operators!)
                 updateUI()
             }
         }
         
-    
+        
         correctWrongView.alpha = 0
         previousQnLabel.text = ""
         warningText.alpha = 0
         self.answerView.layer.borderColor = UIColor.red.cgColor
         
+        
+        setUpRoundBtn()
+        
+        
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
+    }
+    
+    func setUpRoundBtn() {
+        let btnViews = [oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn, sixBtn, sevenBtn, eightBtn, nineBtn, zerobtn, submit]
+        for btnView in btnViews{
+            
+            if (view.frame.height) <= 736.0 {
+                btnView?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+            }
+            btnView!.layer.cornerRadius = (view.frame.height / 25)
+            btnView!.layer.shadowColor = UIColor.black.cgColor
+            btnView!.layer.shadowOpacity = 0.5
+            btnView!.layer.shadowRadius = 2
+            btnView!.layer.shadowOffset = CGSize(width: 0.2, height: 3)
+        }
+        if (view.frame.height) <= 736.0 {
+            submit.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        }
+        
+        let smallBtns = [dotBtn, chnageBtn]
+        for btnView in smallBtns{
+            
+            if (view.frame.height) <= 736.0 {
+                btnView?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+            }
+            
+            btnView!.layer.cornerRadius = (view.frame.height / 35)
+            btnView!.layer.shadowColor = UIColor.black.cgColor
+            btnView!.layer.shadowOpacity = 0.5
+            btnView!.layer.shadowRadius = 2
+            btnView!.layer.shadowOffset = CGSize(width: 0, height: 3)
+        }
     }
     
     func setupOperators() -> [String]{
@@ -141,7 +201,7 @@ class QuestionViewController: UIViewController {
         
         questionLabel.text = "\(mathQuestions!.firstNumber) \(currentOperator) \(mathQuestions!.secNumber) = ?"
     }
-
+    
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         if (mathQuestions!.currentQuestionNo + 1 <= numberOfQuestions!){
             let answer = AnswerEnteredLabel.text!
@@ -151,9 +211,11 @@ class QuestionViewController: UIViewController {
                 score += 1
                 fullView.layer.borderColor = UIColor.green.cgColor
                 imageName = "correct"
+                solution.append(true)
             } else {
                 fullView.layer.borderColor = UIColor.red.cgColor
                 imageName = "wrong"
+                solution.append(false)
             }
             
             UIView.animate(withDuration: 0.2, delay: 0, options: []) {
@@ -194,6 +256,7 @@ class QuestionViewController: UIViewController {
             vc.score = score
             vc.lenOfQn = numberOfQuestions
             vc.myAnswer = myAnswer
+            vc.userAnswerCW = solution
         }
     }
     
@@ -201,6 +264,10 @@ class QuestionViewController: UIViewController {
         self.warningText.alpha = 0
         self.answerView.layer.borderWidth = 0
         if sender.tag == 13 {
+            if (AnswerEnteredLabel.text! == "") {
+                return
+            }
+            
             if Double(AnswerEnteredLabel.text!)! > 0 {
                 AnswerEnteredLabel.text = "-\(AnswerEnteredLabel.text!)"
             } else if Double(AnswerEnteredLabel.text!)! == 0 {
@@ -208,7 +275,7 @@ class QuestionViewController: UIViewController {
             } else {
                 AnswerEnteredLabel.text = String(AnswerEnteredLabel.text!.dropFirst())
             }
-        
+            
         } else if sender.tag != 10 {
             AnswerEnteredLabel.text = AnswerEnteredLabel.text! + "\(sender.tag)"
         } else {
@@ -216,6 +283,19 @@ class QuestionViewController: UIViewController {
                 AnswerEnteredLabel.text = AnswerEnteredLabel.text! + "."
             }
         }
+    }
+    
+    @IBAction func btnDown(_ sender: UIButton) {
+        sender.backgroundColor = UIColor(named: "btnColor:Hover")
+        
+        UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: []) {
+            sender.backgroundColor = UIColor(named: "btnColor")
+        } completion: { _ in}
+        
+    }
+    
+    @IBAction func btnOutSide(_ sender: UIButton) {
+        
     }
     
     @IBAction func removeNum(_ sender: UIButton) {
