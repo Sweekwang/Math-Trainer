@@ -24,9 +24,11 @@ class CorrectWrongView: UIView {
         switch name {
         case "correct":
             correctImage.image = UIImage(systemName: "checkmark.circle.fill")
+            correctImage.tintColor = UIColor.green
             break
         case "wrong":
             correctImage.image = UIImage(systemName: "multiply.circle.fill")
+            correctImage.tintColor = UIColor.red
             break
         default:
             correctImage.image = UIImage(systemName: "")

@@ -13,6 +13,8 @@ class NumberTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var infoTextLabel: UILabel!
     @IBOutlet weak var numberTextField: UITextField!
+    @IBOutlet weak var container: UIView!
+    
     var numberEntered = -1
     
     override func awakeFromNib() {
@@ -23,7 +25,9 @@ class NumberTableViewCell: UITableViewCell, UITextFieldDelegate {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         numberTextField.delegate = self
+        container.layer.cornerRadius = 5
         
+    
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -33,6 +37,13 @@ class NumberTableViewCell: UITableViewCell, UITextFieldDelegate {
             numberEntered = Int(numberInString!)!
         }
         print(numberEntered)
+    }
+    
+    func placeholderText(_ text: String){
+        numberTextField.attributedPlaceholder = NSAttributedString(string: "\(text) (Default)",
+                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        
+        
     }
     
     

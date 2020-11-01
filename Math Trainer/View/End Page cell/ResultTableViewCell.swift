@@ -30,6 +30,7 @@ class ResultTableViewCell: UITableViewCell {
         shapeLayerBackground.path = circularPath.cgPath
         shapeLayerBackground.strokeColor = UIColor.gray.cgColor
         shapeLayerBackground.lineWidth = 5
+        shapeLayerBackground.fillColor = UIColor(named: "Background")?.cgColor
         
         circleContainer.layer.addSublayer(shapeLayerBackground)
         circleContainer.layer.addSublayer(shapeLayer)
@@ -46,7 +47,11 @@ class ResultTableViewCell: UITableViewCell {
     
     func startAnimation(to: Double){
         let animate = CABasicAnimation(keyPath: "strokeEnd")
-        animate.toValue = to - 0.1
+        if to > 5 {
+            animate.toValue = to - 0.205
+        } else {
+            animate.toValue = to - 0.1
+        }
         animate.duration = 3
         animate.fillMode = .both
         animate.isRemovedOnCompletion = false

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class SettingViewController: UIViewController {
     
@@ -20,17 +21,25 @@ class SettingViewController: UIViewController {
     var numberOfDivQuestionsTextField: UITextField?
     // =======================================================================
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var startBgView: UIImageView!
     
     @IBOutlet weak var settingTableView: UITableView!
     @IBOutlet var tabGesture: UITapGestureRecognizer!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("[SettingViewController] Topic Selected: " + selectedTopic)
         startButton.layer.cornerRadius = 10
+        startBgView.layer.cornerRadius = 10
         settingTableView.register(UINib(nibName: K.numberSettingNibStr, bundle: nil), forCellReuseIdentifier: K.numberSettingCell)
         tabGesture.addTarget(self, action: #selector(tapped))
+        
+        // ========================================================
+           bannerView.adUnitID = K.googleAppBannerID
+           bannerView.rootViewController = self
+           bannerView.load(GADRequest())
     }
     
     @objc func tapped(){
@@ -83,25 +92,32 @@ extension SettingViewController: UITableViewDataSource{
         if (indexPath.row == 0){
             cell.infoTextLabel?.text = "Minimum Number :"
             minimumNumberTextField = cell.numberTextField
+            cell.placeholderText("2")
         } else if (indexPath.row == 1) {
             cell.infoTextLabel?.text = "Maximum Number :"
+            cell.placeholderText("12")
             maximumNumberTextField = cell.numberTextField
         } else if (indexPath.row == 2) {
             if (selectedTopic != "Mixed"){
                 cell.infoTextLabel?.text = "Number of Questions :"
+                cell.placeholderText("10")
             } else {
                 cell.infoTextLabel?.text = "Number of Questions for Addition :"
+                cell.placeholderText("5")
             }
             numberOfQuestionsTextField = cell.numberTextField
         } else if (indexPath.row == 3) {
             cell.infoTextLabel?.text = "Number of Questions for Subtraction :"
             numberOfSubQuestionsTextField = cell.numberTextField
+            cell.placeholderText("5")
         } else if (indexPath.row == 4) {
             cell.infoTextLabel?.text = "Number of Questions for Multiplication :"
             numberOfMultiQuestionsTextField = cell.numberTextField
+            cell.placeholderText("5")
         } else if (indexPath.row == 5) {
             cell.infoTextLabel?.text = "Number of Questions for Division :"
             numberOfDivQuestionsTextField = cell.numberTextField
+            cell.placeholderText("5")
         }
     
         return cell
