@@ -86,7 +86,7 @@ class QuestionViewController: UIViewController {
         setUpRoundBtn()
         
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = K.googleAppBannerID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
@@ -100,7 +100,7 @@ class QuestionViewController: UIViewController {
                 btnView?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
             }
             btnView!.layer.cornerRadius = (view.frame.height / 25)
-            btnView!.layer.shadowColor = UIColor.black.cgColor
+            btnView!.layer.shadowColor = UIColor(named: "BlackWhite")?.cgColor
             btnView!.layer.shadowOpacity = 0.5
             btnView!.layer.shadowRadius = 2
             btnView!.layer.shadowOffset = CGSize(width: 0.2, height: 3)
@@ -117,7 +117,7 @@ class QuestionViewController: UIViewController {
             }
             
             btnView!.layer.cornerRadius = (view.frame.height / 35)
-            btnView!.layer.shadowColor = UIColor.black.cgColor
+            btnView!.layer.shadowColor = UIColor(named: "BlackWhite")?.cgColor
             btnView!.layer.shadowOpacity = 0.5
             btnView!.layer.shadowRadius = 2
             btnView!.layer.shadowOffset = CGSize(width: 0, height: 3)

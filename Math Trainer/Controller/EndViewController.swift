@@ -52,7 +52,7 @@ class EndViewController: UIViewController {
         tv.register(UINib(nibName: K.resultCellNibStr, bundle: nil), forCellReuseIdentifier: K.resultCellCell)
         
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = K.googleAppBannerID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         rating()

@@ -27,6 +27,7 @@ class NumberTableViewCell: UITableViewCell, UITextFieldDelegate {
         numberTextField.delegate = self
         container.layer.cornerRadius = 5
         
+    
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -36,6 +37,13 @@ class NumberTableViewCell: UITableViewCell, UITextFieldDelegate {
             numberEntered = Int(numberInString!)!
         }
         print(numberEntered)
+    }
+    
+    func placeholderText(_ text: String){
+        numberTextField.attributedPlaceholder = NSAttributedString(string: "\(text) (Default)",
+                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        
+        
     }
     
     

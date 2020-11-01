@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         ImageViewPurchase.layer.cornerRadius = cornerRatio
         
      // ========================================================
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = K.googleAppBannerID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         

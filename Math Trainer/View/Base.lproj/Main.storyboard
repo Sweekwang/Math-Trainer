@@ -163,7 +163,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtraction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fp0-U2-JAh">
                                                         <rect key="frame" x="107" y="0.0" width="197" height="97"/>
                                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hA9-aa-7Tc" userLabel="Arrow">
@@ -530,7 +530,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vnm-hb-4sq">
-                                <rect key="frame" x="0.0" y="138" width="414" height="565"/>
+                                <rect key="frame" x="0.0" y="168.5" width="414" height="534.5"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vI2-N6-qpb" id="9ne-6I-adi"/>
@@ -569,12 +569,19 @@
                                     <constraint firstAttribute="bottom" secondItem="CWL-sE-59E" secondAttribute="bottom" constant="10" id="zoA-Af-QQf"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two decimal places for answer that has decimals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkZ-Ne-XTY">
+                                <rect key="frame" x="10" y="128" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Ol-4o-hgY"/>
                         <color key="backgroundColor" name="Background"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vnm-hb-4sq" firstAttribute="leading" secondItem="1Ol-4o-hgY" secondAttribute="leading" id="Ebz-Fg-dvb"/>
+                            <constraint firstItem="vnm-hb-4sq" firstAttribute="top" secondItem="ZkZ-Ne-XTY" secondAttribute="bottom" constant="20" id="Fjh-Ty-GCm"/>
                             <constraint firstItem="MBN-qv-ZKx" firstAttribute="leading" secondItem="1Ol-4o-hgY" secondAttribute="leading" id="VAx-St-0ez"/>
                             <constraint firstItem="1Ol-4o-hgY" firstAttribute="bottom" secondItem="nJK-3d-CRc" secondAttribute="bottom" id="YBI-4n-sPe"/>
                             <constraint firstItem="nJK-3d-CRc" firstAttribute="leading" secondItem="1Ol-4o-hgY" secondAttribute="leading" id="Z5U-iF-ODe"/>
@@ -583,8 +590,10 @@
                             <constraint firstItem="cnc-L5-f5J" firstAttribute="leading" secondItem="1Ol-4o-hgY" secondAttribute="leading" id="dwy-R0-bb4"/>
                             <constraint firstItem="nJK-3d-CRc" firstAttribute="top" secondItem="MBN-qv-ZKx" secondAttribute="bottom" id="e8x-HK-QWQ"/>
                             <constraint firstItem="MBN-qv-ZKx" firstAttribute="top" secondItem="vnm-hb-4sq" secondAttribute="bottom" id="eOZ-St-4y9"/>
-                            <constraint firstItem="vnm-hb-4sq" firstAttribute="top" secondItem="cnc-L5-f5J" secondAttribute="bottom" constant="10" id="l3q-vg-DiB"/>
+                            <constraint firstItem="ZkZ-Ne-XTY" firstAttribute="leading" secondItem="1Ol-4o-hgY" secondAttribute="leading" constant="10" id="fuK-Qp-HhM"/>
+                            <constraint firstItem="ZkZ-Ne-XTY" firstAttribute="top" secondItem="cnc-L5-f5J" secondAttribute="bottom" id="iiK-Nq-loh"/>
                             <constraint firstItem="1Ol-4o-hgY" firstAttribute="trailing" secondItem="vnm-hb-4sq" secondAttribute="trailing" id="nBs-1w-9K5"/>
+                            <constraint firstItem="1Ol-4o-hgY" firstAttribute="trailing" secondItem="ZkZ-Ne-XTY" secondAttribute="trailing" constant="10" id="pab-IU-Hvs"/>
                             <constraint firstItem="cnc-L5-f5J" firstAttribute="top" secondItem="1Ol-4o-hgY" secondAttribute="top" constant="10" id="sEy-l6-J78"/>
                             <constraint firstItem="nJK-3d-CRc" firstAttribute="trailing" secondItem="1Ol-4o-hgY" secondAttribute="trailing" id="xf2-xv-oIN"/>
                         </constraints>
@@ -663,8 +672,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="Lxu-7S-twe"/>
                                                         </constraints>
-                                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <state key="normal" image="delete.left.fill" catalog="system"/>
+                                                        <color key="tintColor" name="BlackWhite"/>
+                                                        <state key="normal" image="delete.left.fill" catalog="system">
+                                                            <color key="titleColor" name="BlackWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="removeNum:" destination="CCd-Uc-TFk" eventType="touchUpInside" id="dbi-KN-TkE"/>
                                                         </connections>
@@ -1275,8 +1286,11 @@
         <namedColor name="Background">
             <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="BlackWhite">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="btnColor">
-            <color red="0.63921568627450975" green="0.82352941176470584" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63899999856948853" green="0.82400000095367432" blue="0.79199999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="btnWord">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -37,7 +37,7 @@ class SettingViewController: UIViewController {
         tabGesture.addTarget(self, action: #selector(tapped))
         
         // ========================================================
-           bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+           bannerView.adUnitID = K.googleAppBannerID
            bannerView.rootViewController = self
            bannerView.load(GADRequest())
     }
@@ -92,25 +92,32 @@ extension SettingViewController: UITableViewDataSource{
         if (indexPath.row == 0){
             cell.infoTextLabel?.text = "Minimum Number :"
             minimumNumberTextField = cell.numberTextField
+            cell.placeholderText("2")
         } else if (indexPath.row == 1) {
             cell.infoTextLabel?.text = "Maximum Number :"
+            cell.placeholderText("12")
             maximumNumberTextField = cell.numberTextField
         } else if (indexPath.row == 2) {
             if (selectedTopic != "Mixed"){
                 cell.infoTextLabel?.text = "Number of Questions :"
+                cell.placeholderText("10")
             } else {
                 cell.infoTextLabel?.text = "Number of Questions for Addition :"
+                cell.placeholderText("5")
             }
             numberOfQuestionsTextField = cell.numberTextField
         } else if (indexPath.row == 3) {
             cell.infoTextLabel?.text = "Number of Questions for Subtraction :"
             numberOfSubQuestionsTextField = cell.numberTextField
+            cell.placeholderText("5")
         } else if (indexPath.row == 4) {
             cell.infoTextLabel?.text = "Number of Questions for Multiplication :"
             numberOfMultiQuestionsTextField = cell.numberTextField
+            cell.placeholderText("5")
         } else if (indexPath.row == 5) {
             cell.infoTextLabel?.text = "Number of Questions for Division :"
             numberOfDivQuestionsTextField = cell.numberTextField
+            cell.placeholderText("5")
         }
     
         return cell
