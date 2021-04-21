@@ -1,5 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Maintained%3F-no-red.svg">
+  <img src="https://img.shields.io/github/stars/Sweekwang/Math-Trainer">
+  
 </p>
 
 <p align="center">
